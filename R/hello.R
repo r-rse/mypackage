@@ -18,8 +18,7 @@ hello <- function(name = NULL) {
   greeting <- paste("Hello", name, "from Anna!")
   
   # randomly sample an animal
-  animal_names <- names(cowsay::animals)
-  i <- sample(seq_along(animal_names), 1)
-  
-  cowsay::say(greeting, animal_names[i])
+  animal <- sample(cowsay::animals, 1)
+
+  cowsay::say(greeting, by = animal)
 }
